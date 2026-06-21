@@ -7,5 +7,4 @@ services:
     startCommand: php artisan serve --port=$PORT
     plan: free
     region: singapore
-    fromBranch: main
     healthCheckPath: /api/boards
