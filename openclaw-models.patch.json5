@@ -1,0 +1,17 @@
+{
+  models: {
+    providers: {
+      groq: {
+        baseUrl: "https://api.groq.com/openai/v1",
+        apiKey: { source: "env", provider: "default", id: "GROQ_API_KEY" }
+      }
+    }
+  },
+  agents: {
+    defaults: {
+      model: {
+        primary: "groq/llama-3.3-70b-versatile"
+      }
+    }
+  }
+}

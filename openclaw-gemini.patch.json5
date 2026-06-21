@@ -1,0 +1,21 @@
+{
+  models: {
+    mode: "merge",
+    providers: {
+      gemini: {
+        baseUrl: "https://generativelanguage.googleapis.com/v1beta/openai/",
+        apiKey: { source: "env", provider: "default", id: "GEMINI_API_KEY" },
+        models: [
+          { id: "gemini-2.5-flash", name: "Gemini 2.5 Flash" }
+        ]
+      }
+    }
+  },
+  agents: {
+    defaults: {
+      model: {
+        primary: "gemini/gemini-2.5-flash"
+      }
+    }
+  }
+}
