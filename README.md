@@ -8,9 +8,19 @@ A two-agent AI system that built a Trello-style Kanban board. Built with **Herme
 
 ---
 
-## What this is
+## What is Project Alpha?
 
-This qualifier proves the **two-agent chat loop** works end-to-end:
+**Project Alpha** is the default board in our Kanban app — a Trello-style board built with **Laravel 12 backend** (SQLite) + **React 19 frontend** (Vite). It was built entirely through the Hermes + OpenClaw agent chat loop in Slack.
+
+- **Board name**: Project Alpha
+- **Tech stack**: Laravel API + React Vite + SQLite
+- **Features**: Boards, Lists, Cards, Tags, Members, Due dates
+- **Live URL**: https://parasxagarwal.github.io/forge2-qualifier-moc/
+- **Repo**: https://github.com/ParasxAgarwal/forge2-qualifier-moc
+- **Slack workspace**: rebelrootworkspace
+
+The board contains 3 lists — **To Do**, **In Progress**, and **Done** — with 4 sample cards demonstrating the Kanban workflow.
+
 
 1. **Human** posts a goal in `#sprint-main` on Slack
 2. **Hermes** (brain) plans the task and posts the plan
