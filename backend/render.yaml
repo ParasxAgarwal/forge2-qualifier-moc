@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: kanban-api
+    env: php
+    buildCommand: composer install --no-interaction --optimize-autoloader
+    startCommand: php artisan serve --port=$PORT
+    plan: free
+    region: singapore
+    fromBranch: main
+    healthCheckPath: /api/boards
