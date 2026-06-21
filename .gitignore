@@ -1,1 +1,11 @@
 frontend/.netlify
+.env
+.env.local
+.env.*.local
+.env.production
+openclaw-*.json5
+slack.socket.patch.json5
+skills/
+node_modules/
+vendor/
+*.sqlite
