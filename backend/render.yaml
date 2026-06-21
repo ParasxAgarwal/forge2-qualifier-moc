@@ -2,9 +2,7 @@ services:
   - type: web
     name: kanban-api
     env: php
-    rootDir: backend
-    buildCommand: composer install --no-interaction --optimize-autoloader
+    buildCommand: composer install --no-interaction
     startCommand: php artisan serve --port=$PORT
     plan: free
-    region: singapore
     healthCheckPath: /api/boards
