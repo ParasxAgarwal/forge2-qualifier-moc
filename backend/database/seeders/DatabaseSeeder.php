@@ -22,15 +22,36 @@ class DatabaseSeeder extends Seeder
 
         $board = Board::firstOrCreate(['name' => 'Project Alpha']);
 
-        if ($board->wasRecentlyCreated) {
-            $todo = BoardList::create(['board_id' => $board->id, 'name' => 'To Do', 'position' => 1]);
-            $inProgress = BoardList::create(['board_id' => $board->id, 'name' => 'In Progress', 'position' => 2]);
-            $done = BoardList::create(['board_id' => $board->id, 'name' => 'Done', 'position' => 3]);
+        // Always ensure lists exist (ids are stable, safe to re-run)
+        $todo = BoardList::firstOrCreate(
+            ['board_id' => $board->id, 'name' => 'To Do'],
+            ['position' => 1]
+        );
+        $inProgress = BoardList::firstOrCreate(
+            ['board_id' => $board->id, 'name' => 'In Progress'],
+            ['position' => 2]
+        );
+        $done = BoardList::firstOrCreate(
+            ['board_id' => $board->id, 'name' => 'Done'],
+            ['position' => 3]
+        );
 
-            Card::create(['list_id' => $todo->id, 'title' => 'Setup Kanban board', 'position' => 1]);
-            Card::create(['list_id' => $todo->id, 'title' => 'Add member profiles', 'position' => 2]);
-            Card::create(['list_id' => $inProgress->id, 'title' => 'Write API routes', 'position' => 1]);
-            Card::create(['list_id' => $done->id, 'title' => 'Setup Slack integration', 'position' => 1]);
-        }
+        // Always ensure cards exist
+        Card::firstOrCreate(
+            ['list_id' => $todo->id, 'title' => 'Setup Kanban board'],
+            ['position' => 1]
+        );
+        Card::firstOrCreate(
+            ['list_id' => $todo->id, 'title' => 'Add member profiles'],
+            ['position' => 2]
+        );
+        Card::firstOrCreate(
+            ['list_id' => $inProgress->id, 'title' => 'Write API routes'],
+            ['position' => 1]
+        );
+        Card::firstOrCreate(
+            ['list_id' => $done->id, 'title' => 'Setup Slack integration'],
+            ['position' => 1]
+        );
     }
 }
