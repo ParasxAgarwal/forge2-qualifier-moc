@@ -1,8 +1,7 @@
 services:
   - type: web
     name: kanban-api
-    env: php
+    runtime: php
     buildCommand: composer install --no-interaction
     startCommand: php artisan serve --port=$PORT
     plan: free
-    healthCheckPath: /api/boards
