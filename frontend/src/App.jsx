@@ -91,7 +91,7 @@ function App() {
         <div>
           <button onClick={() => setCurrentBoard(null)}>← Back to Boards</button>
           <h2>{currentBoard.name}</h2>
-          <div style={{ display: 'flex', gap: 16, overflowX: 'auto' }}>
+          <div style={{ display: 'flex', gap: 16, overflowX: 'auto', flexWrap: 'nowrap', minHeight: 0 }}>
             {currentBoard.lists?.map(list => (
               <div key={list.id} style={{ minWidth: 280, background: '#f4f4f5', borderRadius: 8, padding: 12 }}>
                 <div style={{ fontWeight: 'bold', marginBottom: 8 }}>{list.name}</div>
