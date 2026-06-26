@@ -1,0 +1,87 @@
+model:
+  default: gemini-2.5-flash
+  provider: gemini
+fallback_providers:
+- provider: openrouter
+  model: google/gemma-4-26b-a4b-it:free
+- provider: openrouter
+  model: nvidia/nemotron-3-ultra-550b-a55b:free
+providers:
+  groq:
+    api: https://api.groq.com/openai/v1
+    name: Groq
+    api_key: YOUR_GROQ_API_KEY
+    default_model: llama-3.3-70b-versatile
+  openrouter:
+    api: https://openrouter.ai/api/v1
+    name: OpenRouter
+    api_key: YOUR_OPENROUTER_API_KEY
+terminal:
+  backend: local
+  cwd: .
+  timeout: 180
+  lifetime_seconds: 600
+  container_cpu: 1
+  container_memory: 5120
+  container_disk: 51200
+  container_persistent: true
+compression:
+  enabled: true
+  threshold: 0.5
+  target_ratio: 0.2
+  protect_last_n: 20
+  protect_first_n: 3
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  memory_char_limit: 2200
+  user_char_limit: 1375
+  nudge_interval: 10
+  flush_min_turns: 6
+skills:
+  creation_nudge_interval: 15
+  external_dirs:
+  - ./skills
+agent:
+  max_turns: 100
+  verbose: true
+  reasoning_effort: medium
+  delegate_to_agents:
+  - name: openclaw
+    description: Coding agent for executing code, file operations, and CLI commands
+    endpoint: http://localhost:18789
+    token: YOUR_GATEWAY_TOKEN
+  personalities:
+    devops: You are a DevOps and infrastructure expert. Focus on automation, CI/CD,
+      and deployment. You delegate code execution to OpenClaw (the coding agent).
+      Keep responses focused and technical.
+    helpful: You are a helpful, friendly AI assistant that coordinates OpenClaw for
+      coding tasks.
+    technical: You are a technical expert. Provide detailed, accurate technical information.
+    concise: You are a concise assistant. Keep responses brief and to the point.
+    creative: You are a creative assistant. Think outside the box.
+session_reset:
+  mode: both
+  idle_minutes: 1440
+  at_hour: 4
+prompt_caching:
+  cache_ttl: 5m
+tool_loop_guardrails:
+  warnings_enabled: true
+  hard_stop_enabled: false
+  warn_after:
+    exact_failure: 2
+    same_tool_failure: 3
+    idempotent_no_progress: 2
+platform_toolsets:
+  cli:
+  - hermes-cli
+  telegram:
+  - hermes-telegram
+  discord:
+  - hermes-discord
+display:
+  skin: charizard
+onboarding:
+  seen:
+    openclaw_residue_cleanup: true

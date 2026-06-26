@@ -3,7 +3,6 @@ frontend/.netlify
 .env.local
 .env.*.local
 openclaw-*.json5
-openclaw.json
 slack.socket.patch.json5
 node_modules/
 vendor/

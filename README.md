@@ -108,6 +108,9 @@ Open your browser to:
 │   └── database/seeders/DatabaseSeeder.php
 ├── frontend/           # React + Vite
 │   └── vite.config.js (base: /forge2-qualifier-moc/)
+├── slack-export/       # Slack conversation & run screenshots (evidence)
+├── openclaw.json       # OpenClaw configuration file
+├── hermes-config.yaml  # Hermes configuration file
 ├── README.md           # Project Documentation
 ├── ARCHITECTURE.md     # Architecture documentation
 └── docs/               # GitHub Pages build (dist/)
@@ -115,8 +118,9 @@ Open your browser to:
 
 ---
 
-## Video Walkthrough
+## Video Walkthrough & Proof of Work
 
-📹 [Watch the Walkthrough Video](https://example.com/video)
+* 📹 **Screen Recording (Video Proof)**: [Watch the Walkthrough video (Vercel Storage)](https://1i81vatywd5bjk3l.public.blob.vercel-storage.com/FORGE/Screen%20Recording%202026-06-21%20at%205.12.14%E2%80%AFPM.mov)
+* 📸 **Execution Screenshot**: [View the screenshot proof (Vercel Storage)](https://1i81vatywd5bjk3l.public.blob.vercel-storage.com/FORGE/Screenshot%202026-06-21%20at%205.04.00%E2%80%AFPM.png)
 
 ---
