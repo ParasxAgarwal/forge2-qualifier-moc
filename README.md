@@ -2,6 +2,19 @@
 
 A two-agent AI system that built a Trello-style Kanban board. Built with **Hermes** (the brain 🧠) + **OpenClaw** (the hands 🖐️) wired through Slack.
 
+---
+
+### 🏆 TOP 50 QUALIFIED (PARAS AGARWAL) OUT OF 1000+
+**Paras Agarwal** successfully cleared the multi-agent qualifier and advanced to **Forge 2 • Edition 1** (as one of only 53 builders globally to clear the qualifier out of 1,000+ applicants).
+
+* 🔗 **Verification Link**: [labs.nmgdigital.com/forge2-result#parasxagarwal](https://labs.nmgdigital.com/forge2-result#parasxagarwal)
+
+<p align="center">
+  <img src="forge2-qualifier.jpg" alt="Forge 2 Qualifier Result" width="550">
+</p>
+
+---
+
 **Live URL**: https://parasxagarwal.github.io/forge2-qualifier-moc/
 
 > ⚠️ The API runs locally via a temporary SSH tunnel. For judge review, start the backend locally + reload the frontend, or check the video walkthrough.
